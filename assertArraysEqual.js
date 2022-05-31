@@ -7,7 +7,7 @@ const eqArrays = function(arrayOne, arrayTwo) {
     i++;
   }
   return true;
-}
+};
 
 const assertArraysEqual = (arrayOne, arrayTwo) => eqArrays(arrayOne, arrayTwo) ? console.log(`✅✅✅ Assertion Passed: ${arrayOne} === ${arrayTwo}`) : console.log(`🔴🔴🔴 Assertion Failed: ${arrayOne} !== ${arrayTwo}`);
 
