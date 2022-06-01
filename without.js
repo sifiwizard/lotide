@@ -11,18 +11,19 @@ const eqArrays = function(arrayOne, arrayTwo) {
 
 const assertArraysEqual = (arrayOne, arrayTwo) => eqArrays(arrayOne, arrayTwo) ? console.log(`✅✅✅ Assertion Passed: ${arrayOne} === ${arrayTwo}`) : console.log(`🔴🔴🔴 Assertion Failed: ${arrayOne} !== ${arrayTwo}`);
 
-const without = function(source, itemsToRemove){
+const without = function(source, itemsToRemove) {
   let newSource = source.slice();
   for (let i = 0; i < newSource.length; i++) {
     for (const iteam of itemsToRemove) {
       if (newSource[i] === iteam) {
         newSource.splice(i, 1);
         i--;
+        break;
       }
     }
   }
   return newSource;
-}
+};
 
 assertArraysEqual(without([1,2,3],[1]), [2,3]);
 assertArraysEqual(without(["1","2","3"], [1,2,"3"]), ["1","2"]);
