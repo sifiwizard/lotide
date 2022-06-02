@@ -4,7 +4,7 @@ const map = (array, callback) => {
     reults.push(callback(item));
   }
   return reults;
-}
+};
 
 const eqArrays = function(arrayOne, arrayTwo) {
   let i = 0;
@@ -23,6 +23,6 @@ const words = ["ground", "control", "to", "major", "tom"];
 
 const results1 = map(words, word => word[0]);
 
-assertArraysEqual(results1, ["g", "c", "t", "m", "t"])
+assertArraysEqual(results1, ["g", "c", "t", "m", "t"]);
 
 
