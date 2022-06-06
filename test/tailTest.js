@@ -1,14 +1,28 @@
-const assertEqual = require('../assertEqual')
 const tail = require('../tail')
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.toString(), ["Lighthouse", "Labs"].toString());
+const assert = require('chai').assert;
 
-assertEqual(result.length, 2);
-assertEqual(result[0], "Lighthouse");
-assertEqual(result[1], "Labs");
+describe('#tail' , () => {
 
+  it('return last two when passed ["Hello", "Lighthouse", "Labs"]', () =>{
+    const input = ["Hello", "Lighthouse", "Labs"];
+    const expected = ["Lighthouse", "Labs"];
+    const result = tail(input);
+    assert.deepEqual(result, expected);
+  });
 
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3);
+  it('return length of two when passed ["Hello", "Lighthouse", "Labs"]', () =>{
+    const input = ["Hello", "Lighthouse", "Labs"];
+    const expected = 2;
+    const result = tail(input).length;
+    assert.equal(result, expected);
+  });
+
+  it('does not effect original array', () =>{
+    const input =  ["Yo Yo", "Lighthouse", "Labs"];
+    const expected = input;
+    tail(input);
+    assert.deepEqual(input, expected);
+  });
+
+});
